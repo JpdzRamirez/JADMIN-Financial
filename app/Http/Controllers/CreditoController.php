@@ -84,7 +84,7 @@ class CreditoController extends Controller
 
     public function simularCredito(Request $request)
     {
-        if ($request->input('rol') == "cahorsadm") {
+        if ($request->input('rol') == "jadminadm") {
             $tasa1 = ($request->input('tasa'))/100;
         }else{
             $tasa = Tasa::where('tipo', 'Interés')->orderBy('id', 'desc')->first();
@@ -271,7 +271,7 @@ class CreditoController extends Controller
         $costos = Costo::get();
         $tasa = Tasa::where('tipo', 'Interés')->orderBy('id', 'desc')->first();
         $cliente = User::with('referencias', 'personales')->find(Auth::user()->id);
-        $json = file_get_contents("https://crm.apptaxcenter.com/integracion/placas_propietario?key=97215612&identificacion=" . $cliente->nro_identificacion);
+        $json = file_get_contents("https://JADMIN/integracion/placas_propietario?key=97215612&identificacion=" . $cliente->nro_identificacion);
         $cliente->placas = json_decode($json);
         if($cliente->personales == null){
             $cliente->personales = new Personal();
@@ -457,7 +457,7 @@ class CreditoController extends Controller
        $hoy = Carbon::now();
        if($credito->cliente->condicion == "Conductor"){
             //$json = file_get_contents("http://localhost/integracion/cliente_conductor?key=97215612&cedula=" . $credito->cliente->nro_identificacion);
-            $json = file_get_contents("https://crm.apptaxcenter.com/integracion/cliente_conductor?key=97215612&cedula=" . $credito->cliente->nro_identificacion);
+            $json = file_get_contents("https://JADMIN/integracion/cliente_conductor?key=97215612&cedula=" . $credito->cliente->nro_identificacion);
             $vinculacion = json_decode($json);
             $vinculacion->tipo = "Conductor";
             if($vinculacion->fecha != null){
@@ -466,7 +466,7 @@ class CreditoController extends Controller
             }
         }elseif($credito->cliente->condicion == "Propietario"){
             //$json = file_get_contents("http://localhost/integracion/cliente_propietario?key=97215612&cedula=" . $credito->cliente->nro_identificacion);
-            $json = file_get_contents("https://crm.apptaxcenter.com/integracion/cliente_propietario?key=97215612&cedula=" . $credito->cliente->nro_identificacion);
+            $json = file_get_contents("https://JADMIN/integracion/cliente_propietario?key=97215612&cedula=" . $credito->cliente->nro_identificacion);
             $vinculacion = json_decode($json);
             $vinculacion->tipo = "Propietario";
             $mayor = 0;
@@ -534,7 +534,7 @@ class CreditoController extends Controller
     {
         $credito = Credito::with('cliente', 'costos')->find($credito);
 
-        $spreadsheet = IOFactory::load(storage_path() . DIRECTORY_SEPARATOR . "docs" . DIRECTORY_SEPARATOR . "cahors.xlsx");
+        $spreadsheet = IOFactory::load(storage_path() . DIRECTORY_SEPARATOR . "docs" . DIRECTORY_SEPARATOR . "jadmin.xlsx");
         $spreadsheet->setActiveSheetIndex(0);
         $sheet = $spreadsheet->getActiveSheet();
 
@@ -855,10 +855,10 @@ class CreditoController extends Controller
             $to = $credito->cliente->email;
             try {
                 Mail::send('notificaciones.emailFactura', compact('factura'), function ($message) use($to, $carpeta, $concatFact){
-                    $message->from("notificaciones@apptaxcenter.com", "Cahors");
+                    $message->from("EMAILNOTIFY", "jadmin");
                     $message->to($to);
-                    $message->bcc(["gestion@cahors.co"]);
-                    $message->subject("Factura de Venta Cahors");
+                    $message->bcc(["emailnotifyhide"]);
+                    $message->subject("Factura de Venta jadmin");
                     $message->attach($carpeta . $concatFact . "Email.zip", ['as' => 'Factura Electronica.zip', 'mime' => 'application/zip']);
                 });
             } catch (Exception $ex) {

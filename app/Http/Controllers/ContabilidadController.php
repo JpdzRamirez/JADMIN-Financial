@@ -18,7 +18,7 @@ use App\Models\Resolucion;
 use App\Models\Retefuente;
 use App\Models\Reteica;
 use App\Models\Reteiva;
-use App\Models\TerceroCahors;
+use App\Models\TerceroJADMIN;
 use Carbon\Carbon;
 use Exception;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -113,10 +113,10 @@ class ContabilidadController extends Controller
     public function getCalculosCompra(Request $request)
     {
         $datos = new stdClass();
-        $predeterminado = TerceroCahors::where('documento', $request->input('predeterminado'))->first();
+        $predeterminado = TerceroJADMIN::where('documento', $request->input('predeterminado'))->first();
         $datos->predeterminado = $predeterminado;
         if ($request->filled('tercero')) {
-            $tercero = TerceroCahors::where('documento', $request->input('tercero'))->first();
+            $tercero = TerceroJADMIN::where('documento', $request->input('tercero'))->first();
             $datos->tercero = $tercero;
         } else {
             $datos->tercero = $predeterminado;
@@ -152,7 +152,7 @@ class ContabilidadController extends Controller
         $cruzar = false;
         $hoy = Carbon::now();
         try {
-            $tercero = TerceroCahors::where('documento', $request->input('tercero'))->first();
+            $tercero = TerceroJADMIN::where('documento', $request->input('tercero'))->first();
             $factura = new Factura();
             $factura->fecha = $request->input('fecha');
             if ($request->input('tipof') == "Compra") {
@@ -215,7 +215,7 @@ class ContabilidadController extends Controller
 
                     if ($total > 0) {
                         $cuenta = Cuenta::find($dato->id);
-                        $movter = TerceroCahors::find($dato->idtercero);
+                        $movter = TerceroJADMIN::find($dato->idtercero);
                         $movimiento = new Movimiento();
                         $movimiento->naturaleza = $dato->tipo;
                         $movimiento->fecha = $factura->fecha;
@@ -431,7 +431,7 @@ class ContabilidadController extends Controller
     {
         $hoy = Carbon::now();
         try {
-            $tercero = TerceroCahors::with('usuario', 'empresa')->where('documento', $request->input('tercero'))->first();
+            $tercero = TerceroJADMIN::with('usuario', 'empresa')->where('documento', $request->input('tercero'))->first();
             $ultima = Factura::where('tipo', 'Venta')->where('prefijo', $request->input('formapago'))->orderBy('numero', 'desc')->first();
             $factura = new Factura();
             $factura->descripcion = $request->input('concepto');
@@ -627,10 +627,10 @@ class ContabilidadController extends Controller
                 $to = $tercero->email;
                 try {
                     Mail::send('notificaciones.emailFactura', compact('factura'), function ($message) use ($to, $carpeta, $concatFact) {
-                        $message->from("notificaciones@apptaxcenter.com", "Cahors");
+                        $message->from("EMAILNOTIFY", "jadmin");
                         $message->to($to);
-                        $message->bcc(["gestion@cahors.co"]);
-                        $message->subject("Factura de Venta Cahors");
+                        $message->bcc(["EMAILNOTIFYHIDE"]);
+                        $message->subject("Factura de Venta JADMIN");
                         $message->attach($carpeta . $concatFact . "Email.zip", ['as' => 'Factura Electronica.zip', 'mime' => 'application/zip']);
                     });
                 } catch (Exception $ex) {
@@ -950,10 +950,10 @@ class ContabilidadController extends Controller
 
         try {
             Mail::send('notificaciones.emailFactura', compact('factura'), function ($message) use ($to, $carpeta, $concatFact) {
-                $message->from("notificaciones@apptaxcenter.com", "Cahors");
+                $message->from("EMAILNOTIFY", "JADMIN");
                 $message->to($to);
-                $message->bcc(["gestion@cahors.co"]);
-                $message->subject("Factura de Venta Cahors");
+                $message->bcc(["EMAILNOTIFYHIDE"]);
+                $message->subject("Factura de Venta JADMIN");
                 $message->attach($carpeta . $concatFact . "Email.zip", ['as' => 'Factura Electronica.zip', 'mime' => 'application/zip']);
             });
         } catch (Exception $ex) {

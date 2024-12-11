@@ -48,7 +48,7 @@
                     @endif
                 @endforeach
                 <tr style="text-align: center; height: 50px;">
-                    <td colspan="3"><a href="http://credit.cahors.co/contabilidad/resoluciones" style="color: white" class="boton">Ir a resoluciones</a></td>
+                    <td colspan="3"><a href="http://jadmin/contabilidad/resoluciones" style="color: white" class="boton">Ir a resoluciones</a></td>
                 </tr>
             </tbody>
         </table>

@@ -19,8 +19,8 @@
 				<div class="col-sm-12">
 					<div class="page-title-box">
 						<h4 class="page-title">
-							<img src="/img/logo_cahors_blanco.png" width="120px" height="144px">
-							@yield('sub_title', 'CAHORS')
+							<img src="/img/logo.png" width="120px" height="144px">
+							@yield('sub_title', 'JADMIN')
 						</h4>
 					</div>
 				</div>
@@ -36,7 +36,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-12">
-					© 2021 CAHORS
+					© 2021 JADMIN
 				</div>
 			</div>
 		</div>

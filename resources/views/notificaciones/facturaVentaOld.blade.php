@@ -52,20 +52,20 @@
             <tr>
                 <td style="width: 30%">
                     <table>
-                        <tr><td style="text-align: center"><img height="100px" src="{{public_path()}}/img/logo_cahors.png" alt="Logo"></td></tr>
+                        <tr><td style="text-align: center"><img height="100px" src="{{public_path()}}/img/logo.png" alt="Logo"></td></tr>
                         <tr><td style="font-size: 6pt">ACTIVIDAD ICA BUCARAMANGA Act 321 9*1000</td></tr>
                     </table>  
                 </td>
                 <td style="width: 35%"><table>
-                    <tr><td><b style="font-size: 10pt">CAHORS S.A.S </b> </td></tr>
-                    <tr><td>NIT 901318591-6</td></tr>
+                    <tr><td><b style="font-size: 10pt">JADMIN </b> </td></tr>
+                    <tr><td>NIT </td></tr>
                     <tr><td>Persona Jurídica</td></tr>
                     <tr><td>Responsable de IVA</td> </tr>
                     <tr><td>REGIMEN COMÚN</td></tr>
-                    <tr><td>Carrera 33 # 49-35 Oficina 300 Centro Comercial Cabecera II</td></tr>
-                    <tr><td>Bucaramanga</td></tr>
-                    <tr><td>607 633 92 15</td></tr>
-                    <tr><td>gestion@cahors.co</td></tr>
+                    <tr><td>DIRECCION</td></tr>
+                    <tr><td>Ciudad</td></tr>
+                    <tr><td>tel</td></tr>
+                    <tr><td>EMAIL</td></tr>
                     </table>
                 </td>
                 <td style="width: 35%">
@@ -76,7 +76,7 @@
                             <tr><th colspan="2" style="font-size: 10pt;background-color: lightgray; border-radius: 5px; padding: 5px">{{$factura->prefijo}}{{$factura->numero}}</th></tr>
                             <tr><td colspan="2" style="height: 5px"></td></tr>
                             @if ($factura->formapago == "Crédito")
-                                <tr><th>No. Autorización</th><td>18764019003451</td></tr>
+                                <tr><th>No. Autorización</th><td>RESOLUCION</td></tr>
                                 <tr><th>Rango autorizado</th> <td>Desde FECR 415 hasta FECR 5000</td></tr>
                             @else
                                 <tr><th>No. Autorización</th><td>18764019002602</td></tr>

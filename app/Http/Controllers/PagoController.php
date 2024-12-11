@@ -18,7 +18,7 @@ use App\Models\Recibo;
 use App\Models\Retefuente;
 use App\Models\Reteica;
 use App\Models\Reteiva;
-use App\Models\TerceroCahors;
+use App\Models\TerceroJADMIN;
 use App\Models\User;
 use Carbon\Carbon;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -46,7 +46,7 @@ class PagoController extends Controller
     public function registrarPagoView(Request $request)
     {
         if ($request->filled('identificacion')) {
-            $tercero = TerceroCahors::with('usuario')->where('documento', $request->input('identificacion'))->first();
+            $tercero = TerceroJADMIN::with('usuario')->where('documento', $request->input('identificacion'))->first();
             if ($tercero != null) {
                 if ($tercero->usuario != null) {
                     $creditos = Credito::with(['cuotas' => function ($q) {
@@ -609,7 +609,7 @@ class PagoController extends Controller
     public function pagarFacturasView(Request $request)
     {
         $idfacturas = $request->input('idfacturas');
-        $tercero = TerceroCahors::find($request->input('cliente'));
+        $tercero = TerceroJADMIN::find($request->input('cliente'));
         //$cliente = User::with('tercero')->find($request->input('cliente'));
         $facturas = Factura::with('productos.contrapartida')->whereIn('id', $idfacturas)->get();
         foreach ($facturas as $factura) {

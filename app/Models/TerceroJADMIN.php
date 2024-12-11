@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TerceroCahors extends Model
+class TerceroJADMIN extends Model
 {
     use HasFactory;
 
@@ -19,7 +19,7 @@ class TerceroCahors extends Model
 
     public function empresa()
     {
-        return $this->hasOne(EmpresaCahors::class, 'terceros_id');
+        return $this->hasOne(EmpresaJADMIN::class, 'terceros_id');
     }
 
     public function movimientos()

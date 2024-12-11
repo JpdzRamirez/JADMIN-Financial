@@ -51,10 +51,10 @@ class NotificacionesVencidas extends Command
             
             if(count($vencidas) > 1){
                 $texto = "Hola " . $credito->cliente->primer_nombre . ", queremos recordarte que las cuotas " . implode(",", $vencidas) . " de " .
-                count($credito->cuotas) . " para tu crédito con Cahors se encuentran vencidas. Te invitamos a cancelarlas y evitar reportes en las centrales. Feliz día.";
+                count($credito->cuotas) . " para tu crédito con JADMIN se encuentran vencidas. Te invitamos a cancelarlas y evitar reportes en las centrales. Feliz día.";
             }elseif (count($vencidas) == 1) {
                 $texto = "Hola " . $credito->cliente->primer_nombre . ", olvidaste el pago de tu cuota " . $vencidas[0] . " de " .
-                count($credito->cuotas) . " que venció ayer de tu crédito con Cahors. Te invitamos a cancelarla y evitar cobros por mora. Feliz día.";
+                count($credito->cuotas) . " que venció ayer de tu crédito con JADMIN. Te invitamos a cancelarla y evitar cobros por mora. Feliz día.";
             }          
             $this->enviarSMS($texto, $credito->cliente->celular);        
         }
@@ -72,10 +72,10 @@ class NotificacionesVencidas extends Command
             
             if(count($vencidas) > 1){
                 $texto = "Hola " . $credito->cliente->primer_nombre . ", queremos recordarte que las cuotas " . implode(",", $vencidas) . " de " .
-                count($credito->cuotas) . " para tu crédito con Cahors se encuentran vencidas. Te invitamos a cancelarlas y evitar reportes en las centrales. Feliz día.";
+                count($credito->cuotas) . " para tu crédito con JADMIN se encuentran vencidas. Te invitamos a cancelarlas y evitar reportes en las centrales. Feliz día.";
             }elseif (count($vencidas) == 1) {
                 $texto = "Hola " . $credito->cliente->primer_nombre . ", olvidaste el pago de tu cuota " . $vencidas[0] . " de " .
-                count($credito->cuotas) . " que venció hace 5 días de tu crédito con Cahors. Te invitamos a cancelarla y evitar cobros por mora. Feliz día.";
+                count($credito->cuotas) . " que venció hace 5 días de tu crédito con JADMIN. Te invitamos a cancelarla y evitar cobros por mora. Feliz día.";
             }  
             $this->enviarSMS($texto, $credito->cliente->celular);
         }

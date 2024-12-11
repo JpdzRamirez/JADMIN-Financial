@@ -9,7 +9,7 @@ use App\Models\Nota;
 use App\Models\NtaContabilidad;
 use App\Models\Pago;
 use App\Models\Recibo;
-use App\Models\TerceroCahors;
+use App\Models\TerceroJADMIN;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -372,10 +372,10 @@ class FiltroController extends Controller
     public function filtrarTerceros(Request $request)
     {
         if($request->filled('identificacion')){
-            $terceros = TerceroCahors::where('documento', $request->input('identificacion'))->get();
+            $terceros = TerceroJADMIN::where('documento', $request->input('identificacion'))->get();
             $filtro = ['identificacion', $request->input('identificacion')];
         }elseif ($request->filled('nombre')) {
-            $terceros = TerceroCahors::where('nombre', 'like', '%' . $request->input('nombre') . '%')->paginate(10);
+            $terceros = TerceroJADMIN::where('nombre', 'like', '%' . $request->input('nombre') . '%')->paginate(10);
             $filtro = ['nombre', $request->input('nombre')];
         }else{
             return redirect('/contabilidad/terceros');

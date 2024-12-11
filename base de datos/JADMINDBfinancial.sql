@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `cahorsdb`
+-- Base de datos: `JADMINDBFINANCIAL`
 --
 
 -- --------------------------------------------------------
@@ -258,7 +258,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `usuario`, `primer_apellido`, `segundo_apellido`, `primer_nombre`, `segundo_nombre`, `tipo_identificacion`, `nro_identificacion`, `email`, `celular`, `password`, `condicion`, `estado`, `rol`) VALUES
-(1, 'cristian.nieto', 'Nieto', 'Gutierrez', 'Cristian', 'Giovanny', 'Cédula de ciudadanía', '1070620729', 'ingprogramador@taxiseguro.co', '3004480284', '$2y$10$jKsuoS0rEVpNZEOvj2oZz.uyhLXIHXU8RsspTju8ILUBvgfK5QBJy', 'Particular', 1, '1'),
+(1, 'jeremy.pedraza', 'hernandez', 'Pedraza', 'Jeremy', 'Ivan', 'Cédula de ciudadanía', '123416546', 'email', 'TEL', '$2y$10$jKsuoS0rEVpNZEOvj2oZz.uyhLXIHXU8RsspTju8ILUBvgfK5QBJy', 'Particular', 1, '1'),
 (2, '123456', 'PRUEBA', '', 'PRUEBA', '', 'Cédula de ciudadanía', '123456', '123456@gmail.com', '6339215', '$2y$10$AZoCx67rGggfDr19.CwsZeXj/xEvpS/oRP1lzt/jUF5WsXWsDv3EK', 'Conductor', 1, '2');
 
 --

@@ -67,16 +67,16 @@ xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2     h
         <cbc:AdditionalAccountID>1</cbc:AdditionalAccountID>
         <cac:Party>
             <cac:PartyName>
-                <cbc:Name>CAHORS S.A.S.</cbc:Name>
+                <cbc:Name>JADMIN</cbc:Name>
             </cac:PartyName>
             <cac:PhysicalLocation>
                 <cac:Address>
                 <cbc:ID>68001</cbc:ID>
-                    <cbc:CityName>Bucaramanga</cbc:CityName>
-                    <cbc:CountrySubentity>Santander</cbc:CountrySubentity>
+                    <cbc:CityName>CITY</cbc:CityName>
+                    <cbc:CountrySubentity>DEPARTAMENTO</cbc:CountrySubentity>
                     <cbc:CountrySubentityCode>68</cbc:CountrySubentityCode>
                     <cac:AddressLine>
-                        <cbc:Line>Carrera 33 # 49-35 Oficina 300 Centro Comercial Cabecera II Etapa </cbc:Line>
+                        <cbc:Line>DIRECCION</cbc:Line>
                     </cac:AddressLine>
                     <cac:Country>
                         <cbc:IdentificationCode>CO</cbc:IdentificationCode>
@@ -85,16 +85,16 @@ xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2     h
                 </cac:Address>
             </cac:PhysicalLocation>
             <cac:PartyTaxScheme>
-                <cbc:RegistrationName>CAHORS S.A.S.</cbc:RegistrationName>
+                <cbc:RegistrationName>JADMIN</cbc:RegistrationName>
                 <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="6" schemeName="31">901318591</cbc:CompanyID>
                 <cbc:TaxLevelCode listName="48">O-23</cbc:TaxLevelCode>
                 <cac:RegistrationAddress>
                     <cbc:ID>68001</cbc:ID>
-                    <cbc:CityName>Bucaramanga</cbc:CityName>
-                    <cbc:CountrySubentity>Santander</cbc:CountrySubentity>
+                    <cbc:CityName>CIUDAD</cbc:CityName>
+                    <cbc:CountrySubentity>DEPARTAMENTO</cbc:CountrySubentity>
                     <cbc:CountrySubentityCode>68</cbc:CountrySubentityCode>
                     <cac:AddressLine>
-                        <cbc:Line>Carrera 33 # 49-35 Oficina 300 Centro Comercial Cabecera II Etapa </cbc:Line>
+                        <cbc:Line>DIRECCION</cbc:Line>
                     </cac:AddressLine>
                     <cac:Country>
                         <cbc:IdentificationCode>CO</cbc:IdentificationCode>
@@ -107,16 +107,16 @@ xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2     h
                 </cac:TaxScheme>
             </cac:PartyTaxScheme>
             <cac:PartyLegalEntity>
-                <cbc:RegistrationName>CAHORS S.A.S.</cbc:RegistrationName>
-                <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="6" schemeName="31">901318591</cbc:CompanyID>
+                <cbc:RegistrationName>JADMIN</cbc:RegistrationName>
+                <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="6" schemeName="31">NIT</cbc:CompanyID>
                 <cac:CorporateRegistrationScheme>
                     <cbc:ID>{{$factura->prefijo}}</cbc:ID>
                 </cac:CorporateRegistrationScheme>
             </cac:PartyLegalEntity>
             <cac:Contact>
                 <cbc:Name>REGIMEN COMUN</cbc:Name>
-                <cbc:Telephone>6339215</cbc:Telephone>
-                <cbc:ElectronicMail>gestion@cahors.co</cbc:ElectronicMail>
+                <cbc:Telephone>TEL</cbc:Telephone>
+                <cbc:ElectronicMail>EMAIL</cbc:ElectronicMail>
             </cac:Contact>
         </cac:Party>
     </cac:AccountingSupplierParty>

@@ -7,8 +7,8 @@
             <div class="col-sm-12">
                 <div class="page-title-box">
                     <h4 class="page-title">
-                        <img src="/img/logo_cahors_blanco.png" width="200px" height="200px">	 
-                        @yield('sub_title', 'CAHORS')</h4>
+                        <img src="/img/logo.png" width="200px" height="200px">	 
+                        @yield('sub_title', 'JADMIN')</h4>
                 </div>
             </div>
         </div>

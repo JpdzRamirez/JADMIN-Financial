@@ -44,7 +44,7 @@
                 </tr>
                 <tr>
                     <td colspan="2" style="text-align: center">
-                        <img src="http://credit.cahors.co/img/logo_cahors.png" alt="Cahors" style="height:100%">
+                        <img src="img/logo.png" alt="jadmin" style="height:100%">
                     </td>
                 </tr>
                 <tr class="fila">
@@ -68,8 +68,8 @@
                     <br> Según sus políticas puede continuar con el proceso de aceptación o rechazo del documento </td> 
                 </tr>
                 <tr style="text-align: center; height: 50px;">
-                    <td><a href="http://credit.cahors.co/facturas/{{$factura->id}}/procesar?decision=Aceptar" style="color: white" class="boton">Aceptar documento</a></td>
-                    <td><a href="http://credit.cahors.co/facturas/{{$factura->id}}/procesar?decision=Rechazar" style="color: white" class="boton">Rechazar documento</a></td>
+                    <td><a href="http://jadmin/facturas/{{$factura->id}}/procesar?decision=Aceptar" style="color: white" class="boton">Aceptar documento</a></td>
+                    <td><a href="http://jadmin/facturas/{{$factura->id}}/procesar?decision=Rechazar" style="color: white" class="boton">Rechazar documento</a></td>
                 </tr>
             </tbody>
         </table>

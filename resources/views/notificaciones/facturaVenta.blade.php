@@ -52,20 +52,20 @@
             <tr>
                 <td style="width: 30%">
                     <table>
-                        <tr><td style="text-align: center"><img height="100px" src="{{public_path()}}/img/logo_cahors.png" alt="Logo"></td></tr>
+                        <tr><td style="text-align: center"><img height="100px" src="{{public_path()}}/img/LOGO.png" alt="Logo"></td></tr>
                         <tr><td style="font-size: 6pt">ACTIVIDAD ICA BUCARAMANGA Act 321 9*1000</td></tr>
                     </table>  
                 </td>
                 <td style="width: 35%"><table>
-                    <tr><td><b style="font-size: 10pt">CAHORS S.A.S </b> </td></tr>
-                    <tr><td>NIT 901318591-6</td></tr>
+                    <tr><td><b style="font-size: 10pt">JADMIN</b> </td></tr>
+                    <tr><td>NIT NIT</td></tr>
                     <tr><td>Persona Jurídica</td></tr>
                     <tr><td>Responsable de IVA</td> </tr>
                     <tr><td>REGIMEN COMÚN</td></tr>
-                    <tr><td>Carrera 33 # 49-35 Oficina 300 Centro Comercial Cabecera II</td></tr>
+                    <tr><td>DIRECCION</td></tr>
                     <tr><td>Bucaramanga</td></tr>
-                    <tr><td>607 633 92 15</td></tr>
-                    <tr><td>gestion@cahors.co</td></tr>
+                    <tr><td>607TEL</td></tr>
+                    <tr><td>EMAIL</td></tr>
                     </table>
                 </td>
                 <td style="width: 35%">

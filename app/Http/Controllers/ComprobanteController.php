@@ -6,7 +6,7 @@ use App\Models\Comprobante;
 use App\Models\Cuenta;
 use App\Models\Movimiento;
 use App\Models\Recibo;
-use App\Models\TerceroCahors;
+use App\Models\TerceroJADMIN;
 use Carbon\Carbon;
 use Exception;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -256,7 +256,7 @@ class ComprobanteController extends Controller
     public function actualizarComprobante(Request $request)
     {
         try {
-            $tercero = TerceroCahors::where('documento', $request->input('tercero'))->first();
+            $tercero = TerceroJADMIN::where('documento', $request->input('tercero'))->first();
             $comprobante = Comprobante::find($request->input('comprobante'));
             $comprobante->fecha = $request->input('fecha');
             $comprobante->terceros_id = $tercero->id;
@@ -266,7 +266,7 @@ class ComprobanteController extends Controller
             $editados = json_decode($request->input('editados'));
             foreach ($editados as $editado) {
                 $mov = Movimiento::find($editado->id);
-                $ter = TerceroCahors::select('id', 'documento')->where('documento', $editado->tercero)->first();
+                $ter = TerceroJADMIN::select('id', 'documento')->where('documento', $editado->tercero)->first();
                 $cta = Cuenta::select('id', 'codigo', 'nombre')->where('codigo', $editado->cuenta)->first();
                 $valor = $valor + $editado->valor;
 
@@ -282,7 +282,7 @@ class ComprobanteController extends Controller
             $nuevos = json_decode($request->input('nuevos'));
             foreach ($nuevos as $nuevo) {
                 $mov = new Movimiento();
-                $ter = TerceroCahors::select('id', 'documento')->where('documento', $nuevo->tercero)->first();
+                $ter = TerceroJADMIN::select('id', 'documento')->where('documento', $nuevo->tercero)->first();
                 $cta = Cuenta::select('id', 'codigo', 'nombre')->where('codigo', $nuevo->cuenta)->first();
                 $valor = $valor + $nuevo->valor;
 

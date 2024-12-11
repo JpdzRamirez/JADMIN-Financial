@@ -29,7 +29,7 @@ class User extends Authenticatable
 
     public function tercero()
     {
-        return $this->belongsTo(TerceroCahors::class, 'terceros_id');
+        return $this->belongsTo(TerceroJADMIN::class, 'terceros_id');
     }
 
     public function personales()

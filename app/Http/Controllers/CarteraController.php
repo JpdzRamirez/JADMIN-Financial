@@ -13,7 +13,7 @@ use App\Models\Pago;
 use App\Models\Producto;
 use App\Models\Resolucion;
 use App\Models\Seguro;
-use App\Models\TerceroCahors;
+use App\Models\TerceroJADMIN;
 use App\Models\User;
 use Carbon\Carbon;
 use DOMDocument;
@@ -104,7 +104,7 @@ class CarteraController extends Controller
         try {
             $hoy = Carbon::now();
             $otros = $request->input('costos');
-            $tercero = TerceroCahors::where('documento', $request->input('tercero'))->first();
+            $tercero = TerceroJADMIN::where('documento', $request->input('tercero'))->first();
             $seguro = new Seguro();
             $seguro->estado = "Activo";
             $seguro->valor = $request->input('valor');
@@ -318,10 +318,10 @@ class CarteraController extends Controller
         $zip->close();
         try {
             Mail::send('notificaciones.emailFactura', compact('factura'), function ($message) use($to, $carpeta, $concatFact){
-                $message->from("notificaciones@apptaxcenter.com", "Cahors");
+                $message->from("EMAILNOTIFY", "JADMIN");
                 $message->to($to);
-                $message->bcc(["gestion@cahors.co"]);
-                $message->subject("Factura de Venta Cahors");
+                $message->bcc(["EMAILNOTIFYHIDE"]);
+                $message->subject("Factura de Venta JADMIN");
                 $message->attach($carpeta . $concatFact . "Email.zip", ['as' => 'Factura Electronica.zip', 'mime' => 'application/zip']);
             });
         } catch (Exception $ex) {

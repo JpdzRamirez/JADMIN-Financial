@@ -17,7 +17,7 @@ use App\Models\Placa;
 use App\Models\Recibo;
 use App\Models\Tasa;
 use App\Models\Tercero;
-use App\Models\TerceroCahors;
+use App\Models\TerceroJADMIN;
 use App\Models\Tipocredito;
 use App\Models\User;
 use App\Models\Vehiculo;
@@ -83,7 +83,7 @@ class TasaController extends Controller
     public function placasPorCliente(Request $request, $cliente)
     {
         $cliente = User::find($cliente);
-        $json = file_get_contents("https://crm.apptaxcenter.com/integracion/placas_propietario?key=97215612&identificacion=" . $cliente->nro_identificacion);
+        $json = file_get_contents("https://jadmin/integracion/placas_propietario?key=97215612&identificacion=" . $cliente->nro_identificacion);
         $cliente->placas = json_decode($json);
 
         if ($request->ajax()) {
@@ -107,7 +107,7 @@ class TasaController extends Controller
                     $user = User::where('nro_identificacion', $sheet->getCell('A' . $i)->getCalculatedValue())->first();
                     if ($user == null) {
                         $terceroIcon = Tercero::where('NRO_IDENTIFICACION', $sheet->getCell('A' . $i))->first();
-                        $tercero = new TerceroCahors();
+                        $tercero = new TerceroJADMIN();
                         $tercero->tipo = "Persona";
                         $tercero->nombre = utf8_encode($terceroIcon->RAZON_SOCIAL);
                         $tercero->documento =  $sheet->getCell('A' . $i);
@@ -296,8 +296,8 @@ class TasaController extends Controller
                 $nota->year = $ahora->year;
                 //$nota->prefijo = "NCA";
                 $nota->concepto = $request->input('concepto');
-                $primer = TerceroCahors::where('documento', explode(" - ", $hoja->getCell('B2')->getValue())[0])->first();
-                //$primer = TerceroCahors::where('documento', $hoja->getCell('B1')->getValue())->first();
+                $primer = TerceroJADMIN::where('documento', explode(" - ", $hoja->getCell('B2')->getValue())[0])->first();
+                //$primer = TerceroJADMIN::where('documento', $hoja->getCell('B1')->getValue())->first();
                 $nota->terceros_id = $primer->id;
                 $nota->save();
 
@@ -305,8 +305,8 @@ class TasaController extends Controller
                 $cuenta = Cuenta::where('codigo', $codi)->first();
 
                 for ($i = 1; $i <= $numRows; $i++) {
-                    $tercero = TerceroCahors::where('documento', explode(" - ", $hoja->getCell('B' . $i)->getValue())[0])->first();
-                    //$tercero = TerceroCahors::where('documento', $hoja->getCell('B' . $i)->getValue())->first();
+                    $tercero = TerceroJADMIN::where('documento', explode(" - ", $hoja->getCell('B' . $i)->getValue())[0])->first();
+                    //$tercero = TerceroJADMIN::where('documento', $hoja->getCell('B' . $i)->getValue())->first();
                     $valordeb = $hoja->getCell('C' . $i)->getCalculatedValue();
                     $valorcred = $hoja->getCell('D' . $i)->getCalculatedValue();
                     if ($hoja->getCell('A' . $i)->getValue() != $codi) {
@@ -353,7 +353,7 @@ class TasaController extends Controller
 
             $ultima = Factura::where('tipo', 'Compra')->where('prefijo', 'FC')->where('year', $hoy->year)->orderBy('numero', 'desc')->first();
 
-            $tercero = TerceroCahors::where('documento', '860022137')->first();
+            $tercero = TerceroJADMIN::where('documento', '860022137')->first();
             $factura = new Factura();
             $factura->fecha = Carbon::now();
             $factura->prefijo = "FC";
@@ -374,8 +374,8 @@ class TasaController extends Controller
                 $detalle->facturas_id = $factura->id;
                 $detalle->save();
                 $cuenta = Cuenta::where('codigo', $hoja->getCell('A' . $i)->getValue())->first();
-                $movter = TerceroCahors::where('documento', explode("-", $hoja->getCell('B'.$i)->getValue())[0])->first();
-                //$movter = TerceroCahors::where('documento', $hoja->getCell('B' . $i)->getValue())->first();
+                $movter = TerceroJADMIN::where('documento', explode("-", $hoja->getCell('B'.$i)->getValue())[0])->first();
+                //$movter = TerceroJADMIN::where('documento', $hoja->getCell('B' . $i)->getValue())->first();
                 if ($movter != null) {
                     $movimiento = new Movimiento();
                     if ($valorDeb > 0) {

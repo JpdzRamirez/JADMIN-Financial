@@ -105,13 +105,13 @@
     <body>
         <table class="tb-noborder">
             <tr>
-                <td style="width: 15%" rowspan="2"><img height="80px" src="{{public_path()}}/img/logo_cahors.png" alt="Logo"></td>
-                <td style="text-align: center; width: 65%" rowspan="2"><b style="font-size: 12pt">CAHORS S.A.S</b><br>
-                    Nit: 901318591 - 6 IVA RÉGIMEN COMÚN
+                <td style="width: 15%" rowspan="2"><img height="80px" src="{{public_path()}}/img/logo.png" alt="Logo"></td>
+                <td style="text-align: center; width: 65%" rowspan="2"><b style="font-size: 12pt">JADMIN</b><br>
+                    Nit:  - 6 IVA RÉGIMEN COMÚN
                     <br><br>
-                    CARRERA 33 # 49-35 OFICINA 300 CABECERA DEL LLANO <br>
-                    Tel. : 57 607 633 92 15 <br>
-                    BUCARAMANGA</td>
+                    DIRECCION <br>
+                    Tel. : 57 TEL <br>
+                    CIUDAD</td>
                 <th style="text-align: center;width: 20%;font-size: 10pt"> Factura de venta</th>
             </tr>
             <tr><td style="background-color: lightgray; text-align: center;font-size: 10pt">{{$factura->prefijo}} {{$factura->numero}}</td></tr>

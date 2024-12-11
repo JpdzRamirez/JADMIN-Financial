@@ -121,8 +121,8 @@ xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2     h
        <cbc:AdditionalAccountID>1</cbc:AdditionalAccountID>
        <cac:Party>
           <cac:PartyTaxScheme>
-             <cbc:RegistrationName>CAHORS S.A.S</cbc:RegistrationName>
-             <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="6" schemeName="31">901318591</cbc:CompanyID>
+             <cbc:RegistrationName>JDMIN</cbc:RegistrationName>
+             <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="6" schemeName="31">NIT</cbc:CompanyID>
              <cbc:TaxLevelCode listName="48">O-23</cbc:TaxLevelCode>
              <cac:TaxScheme>
                 <cbc:ID>01</cbc:ID>

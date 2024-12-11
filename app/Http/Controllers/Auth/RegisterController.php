@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Placa;
 use App\Models\Tercero;
-use App\Models\TerceroCahors;
+use App\Models\TerceroJADMIN;
 use App\Models\User;
 use App\Models\Vehiculo;
 use Illuminate\Support\Facades\Hash;
@@ -55,7 +55,7 @@ class RegisterController extends Controller
         } else {
             $nombres = explode(" ", $request->input('nombres'));
             $apellidos = explode(" ", $request->input('apellidos'));
-            $tercero = new TerceroCahors();
+            $tercero = new TerceroJADMIN();
             $tercero->tipo = "Persona";
             $usuario = new User();
             $usuario->tipo_identificacion = $request->input('tipoid');
@@ -122,7 +122,7 @@ class RegisterController extends Controller
 
     public function enviarSMS($celular, $codigo)
     {
-        $texto = "El código de verificación para tu registro en Cahors es: " . $codigo;
+        $texto = "El código de verificación para tu registro en JADMIN es: " . $codigo;
         $connection = fopen(
             'https://portal.bulkgate.com/api/1.0/simple/transactional',
             'r',
@@ -145,7 +145,7 @@ class RegisterController extends Controller
             ]])
         );
 
-        $logFile = fopen(storage_path() . DIRECTORY_SEPARATOR . "SMSCahors.txt", 'a') or die("Error creando archivo");
+        $logFile = fopen(storage_path() . DIRECTORY_SEPARATOR . "SMSJADMIN.txt", 'a') or die("Error creando archivo");
 
         if ($connection) {
             //$response = json_decode(stream_get_contents($connection));        

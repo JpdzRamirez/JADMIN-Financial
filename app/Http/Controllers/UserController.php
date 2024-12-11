@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Conductor;
-use App\Models\EmpresaCahors;
+use App\Models\EmpresaJADMIN;
 use App\Models\Placa;
 use App\Models\Tercero;
-use App\Models\TerceroCahors;
+use App\Models\TerceroJADMIN;
 use App\Models\User;
 use App\Models\Vehiculo;
 use Exception;
@@ -36,7 +36,7 @@ class UserController extends Controller
         try {
             $user = User::where('nro_identificacion', $request->input('identificacion'))->first();
             if($user == null){
-                $tercero = new TerceroCahors();
+                $tercero = new TerceroJADMIN();
                 $tercero->tipo = "Persona";
                 $user = new User();
                 $user->tipo_identificacion = $request->input('tipo_identificacion');
@@ -145,7 +145,7 @@ class UserController extends Controller
         $cliente = User::where('nro_identificacion', $conductor)->first();
         if($cliente == null){
             $conductor = Conductor::with('municipio')->where('NUMERO_IDENTIFICACION', $conductor)->first();
-            $tercero = new TerceroCahors();
+            $tercero = new TerceroJADMIN();
             $tercero->tipo = "Persona";
             $cliente = new User();
             $cliente->primer_nombre = $conductor->PRIMER_NOMBRE;
@@ -186,7 +186,7 @@ class UserController extends Controller
 
     public function terceros()
     {
-        $terceros = TerceroCahors::paginate(10);
+        $terceros = TerceroJADMIN::paginate(10);
 
         return view('users.listaTerceros', compact('terceros'));
     }
@@ -199,10 +199,10 @@ class UserController extends Controller
     public function registrarTercero(Request $request)
     {
         try {
-            $tercero = new TerceroCahors();
+            $tercero = new TerceroJADMIN();
             if($request->input('tipo') == "Empresa"){
                 $tercero->tipo = "Empresa";
-                $empresa = new EmpresaCahors();
+                $empresa = new EmpresaJADMIN();
                 $empresa->nit = $request->input('nit');
                 $empresa->razon_social = $request->input('razon');
                 $empresa->dv = $request->input('dv');
@@ -246,14 +246,14 @@ class UserController extends Controller
 
     public function editarTercero($tercero)
     {
-        $tercero = TerceroCahors::with('usuario', 'empresa')->find($tercero);
+        $tercero = TerceroJADMIN::with('usuario', 'empresa')->find($tercero);
 
         return view('users.formTercero', compact('tercero'));
     }
 
     public function actualizarTercero(Request $request)
     {
-        $tercero = TerceroCahors::with('usuario', 'empresa')->find($request->input('tercero'));
+        $tercero = TerceroJADMIN::with('usuario', 'empresa')->find($request->input('tercero'));
         if($tercero->usuario != null){
             $tercero->usuario->celular = $request->input('telefono');
             $tercero->usuario->email = $request->input('email');
@@ -272,7 +272,7 @@ class UserController extends Controller
     }
     public function buscarTercero(Request $request)
     {
-        $terceros = TerceroCahors::where('nombre', 'like', '%' . $request->input('tercero') . '%')->orWhere('documento', 'like', $request->input('tercero') . '%')->get();
+        $terceros = TerceroJADMIN::where('nombre', 'like', '%' . $request->input('tercero') . '%')->orWhere('documento', 'like', $request->input('tercero') . '%')->get();
 
         return json_encode($terceros);
     }

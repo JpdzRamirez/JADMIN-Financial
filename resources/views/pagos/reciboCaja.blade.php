@@ -105,9 +105,9 @@
             <tr>
                 <th style="width: 20%" rowspan="2">{{$fecha->format("Y-m-d")}}</th>
                 <th style="width: 60%" rowspan="2">
-                    CAHORS S.A.S. <br>
-                    CARRERA 33 # 49-35 OFICINA 300-7 CABECERA DEL LLANO <br>
-                    Tel: 6076339215
+                    JADMIN. <br>
+                    DIRECCION <br>
+                    Tel: TEL
                 </th>
                 <th style="width: 20%">RECIBO CAJA</th>
             </tr>

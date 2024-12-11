@@ -8,7 +8,7 @@ use App\Models\Factura;
 use App\Models\FacturasxRecibo;
 use App\Models\Movimiento;
 use App\Models\Nota;
-use App\Models\TerceroCahors;
+use App\Models\TerceroJADMIN;
 use Carbon\Carbon;
 use Barryvdh\DomPDF\Facade as PDF;
 use Exception;
@@ -47,7 +47,7 @@ class InformeController extends Controller
                 $cuentafi = '6';
             }
 
-            $tercero = TerceroCahors::where('documento', $request->input('tercero'))->first();
+            $tercero = TerceroJADMIN::where('documento', $request->input('tercero'))->first();
             if($tercero != null){
                 $idter = $tercero->id;
                 $cuentas = Cuenta::with(['movimientos'=>function($q) use($fechain, $fechafi, $idter){
@@ -84,7 +84,7 @@ class InformeController extends Controller
             $cuentafi = '6';
         }
 
-        $tercero = TerceroCahors::where('documento', $request->input('tercero'))->first();
+        $tercero = TerceroJADMIN::where('documento', $request->input('tercero'))->first();
         if($tercero != null){
             $idter = $tercero->id;
             $cuentas = Cuenta::with(['movimientos'=>function($q) use($fechain, $fechafi, $idter){
@@ -217,7 +217,7 @@ class InformeController extends Controller
 
     public function descargarCarteraGenerica(Request $request)
     {
-        $tercero = TerceroCahors::where('documento', $request->input('tercero'))->first();
+        $tercero = TerceroJADMIN::where('documento', $request->input('tercero'))->first();
         $doc = $request->input('tercero');
         $ahora = Carbon::now();
         if($tercero != null){
@@ -428,7 +428,7 @@ class InformeController extends Controller
         $styleNumero = ['numberFormat'=> ['formatCode'=> '#,##0']];
         $styleLetra = ['font'=>['size'=>8]];
 
-        $sheet->setCellValue("A1", "BALANCE CONSOLIDADO CAHORS S.A.S DESDE " . $fechain . " HASTA " . $fechafi);
+        $sheet->setCellValue("A1", "BALANCE CONSOLIDADO JADMIN DESDE " . $fechain . " HASTA " . $fechafi);
         $sheet->mergeCells("A1:F1");
 
         $sheet->setCellValue("A2", "Cuenta");
@@ -477,7 +477,7 @@ class InformeController extends Controller
             }       
 
             $idcuenta = $cuenta->id;
-            $nomovs = TerceroCahors::whereHas('movimientos', function($q) use($idcuenta){$q->where('cuentas_id', $idcuenta)->where('estado', '1');})->whereDoesntHave('movimientos', function($q) use($fechain, $fechafi, $idcuenta){$q->whereBetween('fecha', [$fechain, $fechafi])->where('estado', '1')->where('cuentas_id', $idcuenta);})->get();
+            $nomovs = TerceroJADMIN::whereHas('movimientos', function($q) use($idcuenta){$q->where('cuentas_id', $idcuenta)->where('estado', '1');})->whereDoesntHave('movimientos', function($q) use($fechain, $fechafi, $idcuenta){$q->whereBetween('fecha', [$fechain, $fechafi])->where('estado', '1')->where('cuentas_id', $idcuenta);})->get();
             if($request->input('terceros') == "1"){
                 foreach ($nomovs as $nomov) {
                     if ($cuentaPuc == '4' || $cuentaPuc == '5') {
@@ -538,7 +538,7 @@ class InformeController extends Controller
         $cuenta = $request->input('cuenta');
         $idcuenta = Cuenta::where('codigo', $cuenta)->first()->id;
         $fechafi = $request->input('fechafi') . ' 23:59';
-        $terceros = TerceroCahors::with(['movimientos' => function($q) use($idcuenta, $fechafi){$q->where('cuentas_id', $idcuenta)->where('fecha', '<=', $fechafi);}])->get();
+        $terceros = TerceroJADMIN::with(['movimientos' => function($q) use($idcuenta, $fechafi){$q->where('cuentas_id', $idcuenta)->where('fecha', '<=', $fechafi);}])->get();
 
         return view('informes.saldosPorCuenta', compact('terceros', 'cuenta', 'fechafi'));
     }

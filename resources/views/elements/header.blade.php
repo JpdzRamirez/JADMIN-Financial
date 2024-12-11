@@ -3,7 +3,7 @@
 		<div class="container-fluid">
 			<div class="logo">
 				<a href="{{ route('home') }}" class="logo">
-					CAHORS
+					JADMIN
 				</a>
 			</div>
 			<div class="menu-extras topbar-custom">

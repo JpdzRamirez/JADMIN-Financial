@@ -61,9 +61,9 @@ class ResolucionVencida extends Command
     function enviarCorreo($resoluciones){
         try{
             Mail::send('notificaciones.emailResoluciones', compact('resoluciones'), function ($message) {
-                $message->from("notificaciones@apptaxcenter.com", "Cahors");
-                $message->to(["gestion@cahors.co", "ingprogramar@taxiseguro.co"]);
-                $message->subject("Notificación Resoluciones CAHORS");
+                $message->from("EMAILNOTIFY", "JADMIN");
+                $message->to(["EMAILDESTINATARY1", "EMAILDETINATARY2"]);
+                $message->subject("Notificación Resoluciones JADMIN");
             
             });
         }

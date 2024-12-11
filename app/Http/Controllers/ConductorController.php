@@ -921,7 +921,8 @@ class ConductorController extends Controller
                     }                    
                     $servicio->valorc = $cuota;
 
-                    $url = "http://201.221.157.189:8080/icon_crm/services/ModelValeVirtual?wsdl";
+                    // soap http://201.221.157.189:8080/icon_crm/services/ModelValeVirtual?wsdl
+                    $url = "soap";
 
                     try {
                         $client = new SoapClient($url, ['exceptions' => true]);
@@ -1234,7 +1235,8 @@ class ConductorController extends Controller
                 $transaccion->comentarios = "Transferencia entre saldos desde la aplicación";
                 $transaccion->cuentasc_id = $cuentac->id;
     
-                $url = "http://201.221.157.189:8080/icon_crm/services/ModelValeVirtual?wsdl";
+                //http://201.221.157.189:8080/icon_crm/services/ModelValeVirtual?wsdl
+                $url = "crm";
     
                 try {
                     $client = new SoapClient($url, ['exceptions' => true]);

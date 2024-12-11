@@ -13,7 +13,7 @@
 
             <form action="/creditos/solicitar" method="POST" id="formcredito" accept-charset="UTF-8">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
-                <input type="hidden" name="rol" value="cahorsadm">
+                <input type="hidden" name="rol" value="jadminadm">
 
                 <div class="form-group row">
                     {{ Form::label('cliente', 'Cliente', ['class' => 'label-required col-md-2']) }}

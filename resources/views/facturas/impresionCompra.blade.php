@@ -105,9 +105,9 @@
             <tr>
                 <th style="width: 20%" rowspan="2">{{$fecha->format("Y/m/d")}}</th>
                 <th style="width: 60%" rowspan="2">
-                    CAHOR S.A.S. <br>
-                    Nit: 901318591-6 <br>
-                    CARRERA 33 # 49-35 OFICINA 300-7 CABECERA DEL LLANO Tel:6076339215
+                    JADMIN <br>
+                    Nit:  <br>
+                    DIRE TEL
                 </th>
                 @if ($factura->prefijo == "FC")
                     <th style="width: 20%">FACTURA DE COMPRA</th>

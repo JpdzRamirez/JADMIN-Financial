@@ -15,7 +15,7 @@ xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                    <cbc:IdentificationCode listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.1">CO</cbc:IdentificationCode>
                 </sts:InvoiceSource>
                 <sts:SoftwareProvider>
-                   <sts:ProviderID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="6" schemeName="31">901318591</sts:ProviderID>
+                   <sts:ProviderID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="6" schemeName="31">NIT</sts:ProviderID>
                    <sts:SoftwareID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)">7298e08a-57de-4c43-83a3-573a09928809</sts:SoftwareID>
                 </sts:SoftwareProvider>
                 <sts:SoftwareSecurityCode schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)">{{$segCode}}</sts:SoftwareSecurityCode>
@@ -60,7 +60,7 @@ xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
         <cbc:AdditionalAccountID>1</cbc:AdditionalAccountID>
         <cac:Party>
             <cac:PartyName>
-                <cbc:Name>CAHORS S.A.S.</cbc:Name>
+                <cbc:Name>JADMIN</cbc:Name>
             </cac:PartyName>
             <cac:PhysicalLocation>
                 <cac:Address>
@@ -69,7 +69,7 @@ xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                     <cbc:CountrySubentity>Santander</cbc:CountrySubentity>
                     <cbc:CountrySubentityCode>68</cbc:CountrySubentityCode>
                     <cac:AddressLine>
-                        <cbc:Line>Carrera 33 # 49-35 Oficina 300 Centro Comercial Cabecera II Etapa </cbc:Line>
+                        <cbc:Line>DIRECCION </cbc:Line>
                     </cac:AddressLine>
                     <cac:Country>
                         <cbc:IdentificationCode>CO</cbc:IdentificationCode>
@@ -78,8 +78,8 @@ xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                 </cac:Address>
             </cac:PhysicalLocation>
             <cac:PartyTaxScheme>
-                <cbc:RegistrationName>CAHORS S.A.S.</cbc:RegistrationName>
-                <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="6" schemeName="31">901318591</cbc:CompanyID>
+                <cbc:RegistrationName>JADMIN</cbc:RegistrationName>
+                <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="6" schemeName="31">NIT</cbc:CompanyID>
                 <cbc:TaxLevelCode listName="48">O-23</cbc:TaxLevelCode>
                 <cac:RegistrationAddress>
                     <cbc:ID>68001</cbc:ID>
@@ -87,7 +87,7 @@ xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                     <cbc:CountrySubentity>Santander</cbc:CountrySubentity>
                     <cbc:CountrySubentityCode>68</cbc:CountrySubentityCode>
                     <cac:AddressLine>
-                        <cbc:Line>Carrera 33 # 49-35 Oficina 300 Centro Comercial Cabecera II Etapa </cbc:Line>
+                        <cbc:Line>DIRECCION </cbc:Line>
                     </cac:AddressLine>
                     <cac:Country>
                         <cbc:IdentificationCode>CO</cbc:IdentificationCode>
@@ -100,8 +100,8 @@ xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
                 </cac:TaxScheme>
             </cac:PartyTaxScheme>
             <cac:PartyLegalEntity>
-                <cbc:RegistrationName>CAHORS S.A.S.</cbc:RegistrationName>
-                <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="6" schemeName="31">901318591</cbc:CompanyID>
+                <cbc:RegistrationName>JADMIN</cbc:RegistrationName>
+                <cbc:CompanyID schemeAgencyID="195" schemeAgencyName="CO, DIAN (Dirección de Impuestos y Aduanas Nacionales)" schemeID="6" schemeName="31">NIT</cbc:CompanyID>
                 <cac:CorporateRegistrationScheme>
                     <cbc:ID>ND</cbc:ID>
                 </cac:CorporateRegistrationScheme>
@@ -109,7 +109,7 @@ xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
             <cac:Contact>
                 <cbc:Name>REGIMEN COMUN</cbc:Name>
                 <cbc:Telephone>6339215</cbc:Telephone>
-                <cbc:ElectronicMail>gestion@cahors.co</cbc:ElectronicMail>
+                <cbc:ElectronicMail>gestion@JADMINc:ElectronicMail>
             </cac:Contact>
         </cac:Party>
     </cac:AccountingSupplierParty>

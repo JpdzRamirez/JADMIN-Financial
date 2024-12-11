@@ -150,7 +150,7 @@ class ExportarController extends Controller
         $sheet = $spreadsheet->getActiveSheet();
         $styleCentrar = ['alignment' => ['horizontal' => Alignment::HORIZONTAL_CENTER], 'font'=>['bold'=>true]];
 
-        $sheet->setCellValue("A1", "Clientes Cahors");
+        $sheet->setCellValue("A1", "Clientes JADMIN");
         $sheet->mergeCells("A1:H1");
         
         $sheet->setCellValue("A2", "ID");

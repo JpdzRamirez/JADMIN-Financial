@@ -12,7 +12,7 @@
 				@endif
 				<div class="row">
 					<div class="col-md-6">
-						<img src="/img/logo_cahors.png" class="rounded mx-auto d-block" alt="Taxiseguro">
+						<img src="/img/logo.png" class="rounded mx-auto d-block" alt="JADMIN">
 						<div class="text-center">
 							<ul style="color: rgb(46,59,116);list-style-type: none;font-size: x-large;font-weight: bold;">
 								<li>Préstamo libre inversión</li>
@@ -25,7 +25,7 @@
 					</div>
 					<div class="col-md-6" style="border: 3px double blue">
 						<div class="p-3">							
-							<h4 class="text-muted font-18 m-b-5 text-center">Bienvenido a Cahors</h4>
+							<h4 class="text-muted font-18 m-b-5 text-center">Bienvenido a JADMIN</h4>
 							<p class="text-muted text-center">Digita tus credenciales para ingresar a la aplicación</p>
 							{{ Form::open(['url' => route('login'), 'method' => 'post', 'class' => 'form-horizontal m-t-30']) }}
 								<div class="form-group {{ $errors->has('usuario') ? 'form-error': '' }}">
@@ -61,7 +61,7 @@
 			</div>
 		</div>
 		<div class="m-t-40 text-center">
-			<p>© 2021 CAHORS
+			<p>© 2021 JADMIN
 		</div>
 	</div>
 @endsection

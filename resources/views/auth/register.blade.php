@@ -13,7 +13,7 @@
 				<div class="row">
 					<div class="col-md-6" style="border: 3px double blue">
 						<div class="p-3">							
-							<h3 class="m-b-5 text-center" style="color: rgb(46,59,116)">Regístrate en Cahors</h3>
+							<h3 class="m-b-5 text-center" style="color: rgb(46,59,116)">Regístrate en JADMIN</h3>
 							{{ Form::open(['url' => route('register'), 'method' => 'post', 'id' => 'formreg', 'class' => 'form-horizontal m-t-30']) }}
 								<div class="form-group">
 									{{ Form::label('tipoid', 'Tipo de identificación') }}
@@ -59,7 +59,7 @@
 						</div>
 					</div>
 					<div class="col-md-6" style="margin: auto">
-						<img src="/img/logo_cahors.png" class="rounded mx-auto d-block" alt="Taxiseguro">
+						<img src="/img/logo.png" class="rounded mx-auto d-block" alt="JADMIN">
 						<div class="text-center">
 							<ul style="color: rgb(46,59,116);list-style-type: none;font-size: x-large;font-weight: bold;">
 								<li>Préstamo libre inversión</li>
@@ -72,7 +72,7 @@
 			</div>
 		</div>
 		<div class="m-t-40 text-center">
-			<p>© 2021 CAHORS
+			<p>© 2021 JADMIN
 		</div>
 	</div>
 @endsection

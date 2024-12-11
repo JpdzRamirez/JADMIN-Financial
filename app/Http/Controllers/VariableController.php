@@ -10,7 +10,7 @@ use App\Models\Resolucion;
 use App\Models\Retefuente;
 use App\Models\Reteica;
 use App\Models\Reteiva;
-use App\Models\TerceroCahors;
+use App\Models\TerceroJADMIN;
 use Exception;
 use Illuminate\Http\Request;
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -315,7 +315,7 @@ class VariableController extends Controller
         $movimientos = json_decode($request->input('movimientos'));
         $cuenta = Cuenta::where('codigo', $request->input('cuenta'))->first();
         $contrapartida = Cuenta::where('codigo', $request->input('contrapartida'))->first();
-        $tercero = TerceroCahors::where('documento', $request->input('tercero'))->first();
+        $tercero = TerceroJADMIN::where('documento', $request->input('tercero'))->first();
         $valor = $request->input('valor');
 
         $mov = (object) ["id"=>$cuenta->id, "codigo"=>$cuenta->codigo, "nombre"=>$cuenta->nombre, "tipo"=>"Crédito", "valor"=>$valor, "tercero"=>$tercero->documento . "-" . $tercero->nombre, "idtercero"=>$tercero->id, "extra"=>1];

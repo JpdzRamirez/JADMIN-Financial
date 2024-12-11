@@ -10,7 +10,7 @@ use App\Models\Movimiento;
 use App\Models\Nota;
 use App\Models\NtaContabilidad;
 use App\Models\Producto;
-use App\Models\TerceroCahors;
+use App\Models\TerceroJADMIN;
 use Carbon\Carbon;
 use DOMDocument;
 use Barryvdh\DomPDF\Facade as PDF;
@@ -316,7 +316,7 @@ class NotaController extends Controller
     public function actualizarNotaContable(Request $request)
     {
         try {
-            $tercero = TerceroCahors::where('documento', $request->input('tercero'))->first();
+            $tercero = TerceroJADMIN::where('documento', $request->input('tercero'))->first();
             $notaContable = NtaContabilidad::find($request->input('notaContable'));
             $notaContable->fecha = $request->input('fecha');
             $notaContable->terceros_id = $tercero->id;
@@ -326,7 +326,7 @@ class NotaController extends Controller
             $editados = json_decode($request->input('editados'));
             foreach ($editados as $editado) {
                 $movimiento = Movimiento::find($editado->id);
-                $tercero = TerceroCahors::select('id', 'documento')->where('documento', $editado->tercero)->first();
+                $tercero = TerceroJADMIN::select('id', 'documento')->where('documento', $editado->tercero)->first();
                 $cuenta = Cuenta::select('id', 'codigo', 'nombre')->where('codigo', $editado->cuenta)->first();
                 $valor = $valor + $editado->valor;
 
@@ -342,7 +342,7 @@ class NotaController extends Controller
             $nuevos = json_decode($request->input('nuevos'));
             foreach ($nuevos as $nuevo) {
                 $movimiento = new Movimiento();
-                $tercero = TerceroCahors::select('id', 'documento')->where('documento', $nuevo->tercero)->first();
+                $tercero = TerceroJADMIN::select('id', 'documento')->where('documento', $nuevo->tercero)->first();
                 $cuenta = Cuenta::select('id', 'codigo', 'nombre')->where('codigo', $nuevo->cuenta)->first();
                 $valor = $valor + $nuevo->valor;
 
@@ -378,7 +378,7 @@ class NotaController extends Controller
         $creditos = 0;
         try {
             DB::beginTransaction();
-            $tercero = TerceroCahors::find($ter[0]);
+            $tercero = TerceroJADMIN::find($ter[0]);
             $nota = new NtaContabilidad();
             $nota->prefijo = $request->input('tipon');
             $fechaenv = Carbon::now();

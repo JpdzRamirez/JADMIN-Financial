@@ -105,9 +105,9 @@
             <tr>
                 <th style="width: 20%" rowspan="2">{{$fecha->format("Y/m/d")}}</th>
                 <th style="width: 60%" rowspan="2">
-                    CAHOR S.A.S. <br>
-                    CARRERA 33 # 49-35 OFICINA 300-6 CABECERA DEL LLANO <br>
-                    Tel:6076339215
+                    JADMIN <br>
+                    Nit:  <br>
+                    DIRE TEL
                 </th>
                 <th style="width: 20%">{{$comprobante->tipo}}</th>
             </tr>

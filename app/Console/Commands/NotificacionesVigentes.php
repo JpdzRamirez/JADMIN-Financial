@@ -45,7 +45,7 @@ class NotificacionesVigentes extends Command
             $texto = "";
             foreach ($credito->cuotas as $cuota) {
                 if($cuota->estado == "Vigente"){
-                    $texto = "Hola " . $credito->cliente->primer_nombre . ", En Cahors queremos recordarte que la fecha límite de pago para su cuota " . $cuota->ncuota . " de " .
+                    $texto = "Hola " . $credito->cliente->primer_nombre . ", En JADMIN queremos recordarte que la fecha límite de pago para su cuota " . $cuota->ncuota . " de " .
                     count($credito->cuotas) . " es " . $cuota->fecha_vencimiento . " .Vence en 5 días. Feliz día.";
                     break;
                 }
@@ -59,7 +59,7 @@ class NotificacionesVigentes extends Command
             $texto = "";
             foreach ($credito->cuotas as $cuota) {
                 if($cuota->estado == "Vigente"){
-                    $texto = "Hola " . $credito->cliente->primer_nombre . ", En Cahors queremos recordarte que la fecha límite de pago para su cuota " . $cuota->ncuota . " de " .
+                    $texto = "Hola " . $credito->cliente->primer_nombre . ", En JADMIN queremos recordarte que la fecha límite de pago para su cuota " . $cuota->ncuota . " de " .
                     count($credito->cuotas) . " es mañana " . $cuota->fecha_vencimiento . " Feliz día.";
                     break;
                 }

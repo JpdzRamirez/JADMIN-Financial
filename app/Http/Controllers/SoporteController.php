@@ -11,7 +11,7 @@ use App\Models\Producto;
 use App\Models\Resolucion;
 use App\Models\Retefuente;
 use App\Models\Reteica;
-use App\Models\TerceroCahors;
+use App\Models\TerceroJADMIN;
 use Carbon\Carbon;
 use DOMDocument;
 use Illuminate\Http\Request;
@@ -45,7 +45,7 @@ class SoporteController extends Controller
     {
         $hoy = Carbon::now();
         try {
-            $tercero = TerceroCahors::with('usuario', 'empresa')->where('documento', $request->input('tercero'))->first();
+            $tercero = TerceroJADMIN::with('usuario', 'empresa')->where('documento', $request->input('tercero'))->first();
             $ultima = Factura::where('tipo', 'Soporte')->orderBy('numero', 'desc')->first();
             $soporte = new Factura();
             $soporte->descripcion = $request->input('concepto');
@@ -201,7 +201,7 @@ class SoporteController extends Controller
     
                         if ($total > 0) {
                             $cuenta = Cuenta::find($dato->id);
-                            $movter = TerceroCahors::find($dato->idtercero);
+                            $movter = TerceroJADMIN::find($dato->idtercero);
                             $movimiento = new Movimiento();
                             $movimiento->naturaleza = $dato->tipo;
                             $movimiento->fecha = $soporte->fecha;
