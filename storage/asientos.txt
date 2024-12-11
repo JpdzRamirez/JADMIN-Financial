@@ -1,0 +1,19 @@
+
+RC1 2265 ---- Diferencia: 42533.44 ----- Crédito: 82533.44 ------ Débito: 40000
+RC1 2270 ---- Diferencia: 1426.61 ----- Crédito: 289426.61 ------ Débito: 288000
+RC1 2273 ---- Diferencia: 3742.28 ----- Crédito: 246257.72 ------ Débito: 250000
+RC1 2274 ---- Diferencia: 1113.18 ----- Crédito: 176886.82 ------ Débito: 178000
+RC1 2300 ---- Diferencia: 3239.57 ----- Crédito: 214664.57 ------ Débito: 211425
+RC1 2302 ---- Diferencia: 2732.31 ----- Crédito: 27932.31 ------ Débito: 25200
+RC1 2325 ---- Diferencia: 1280.67 ----- Crédito: 115280.67 ------ Débito: 114000
+RC1 2329 ---- Diferencia: 1786.64 ----- Crédito: 221213.36 ------ Débito: 223000
+RC1 2342 ---- Diferencia: 9057.78 ----- Crédito: 278585.78 ------ Débito: 269528
+RC1 2403 ---- Diferencia: 814.99999999997 ----- Crédito: 147815.22 ------ Débito: 147000.22
+RC1 2421 ---- Diferencia: 1486732.16 ----- Crédito: 0 ------ Débito: 1486732.16
+RC1 2469 ---- Diferencia: 287712 ----- Crédito: 288 ------ Débito: 288000
+NCO 95 ---- Diferencia: 564.34 ----- Crédito: 23111.45 ------ Débito: 23675.79
+NCA 3 ---- Diferencia: 2.5 ----- Crédito: 80.82 ------ Débito: 78.32
+NCO 626 ---- Diferencia: 706 ----- Crédito: 95438 ------ Débito: 94732
+NCA 20 ---- Diferencia: 1.0000000000146 ----- Crédito: 70634 ------ Débito: 70633
+NCO 710 ---- Diferencia: 5 ----- Crédito: 127092 ------ Débito: 127097
+NCO 718 ---- Diferencia: 180 ----- Crédito: 292402 ------ Débito: 292222

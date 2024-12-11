@@ -1,0 +1,4 @@
+
+26/10/2023 08:55:22-Connection could not be established with host mailhog :stream_socket_client(): php_network_getaddresses: getaddrinfo failed: Host desconocido. ---261
+26/10/2023 08:55:41-Connection could not be established with host mailhog :stream_socket_client(): php_network_getaddresses: getaddrinfo failed: Host desconocido. ---261
+26/10/2023 08:56:10-Connection could not be established with host mailhog :stream_socket_client(): php_network_getaddresses: getaddrinfo failed: Host desconocido. ---261

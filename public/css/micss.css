@@ -1,0 +1,7 @@
+thead tr {
+    background-color: aliceblue;
+  }
+
+thead th:hover{
+    background-color:aquamarine
+  }
